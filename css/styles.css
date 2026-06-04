@@ -3,7 +3,12 @@
   --bg-card: #110e18; /* Матовый темно-фиолетовый для Bento и карточек */
   --text-main: #fff; /* Ослепительно белый для заголовков */
   --text-secondary: #908a9f; /* Благородный приглушенный серый для меню */
-  --accent-purple: #6236ff; /* Фирменный сочный фиолетовый неон для кнопок */
+  --accent-purple: linear-gradient(
+    to right,
+    rgba(0, 95, 255, 1) 0%,
+    rgba(66, 33, 227, 1) 51%,
+    rgba(102, 0, 212, 1) 100%
+  ); /* Фирменный фиолетовый неоновый градиент для кнопок */
   --accent-cyan: #00ecff; /* Кибер-бирюзовый для подсветки и лайвов */
 }
 
@@ -30,11 +35,12 @@ body {
 }
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: rgba(6, 4, 10, 0.75);
-  backdrop-filter: blur(12px);
+  background-color: transparent;
+  backdrop-filter: none;
   z-index: 1000;
 }
 
@@ -75,7 +81,7 @@ body {
 .header__link {
   color: var(--text-main);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.01em;
   padding: 8px 12px;
@@ -84,9 +90,12 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* При наведении ссылки плавно белеют */
+.header__link {
+  padding: 12px 20px;
+}
+
 .nav__link:hover {
-  background-color: var(--accent-purple);
+  background: var(--accent-purple);
   color: var(--text-main);
 }
 
@@ -97,23 +106,296 @@ body {
   gap: 24px;
 }
 
-/* Акцентная фиолетовая кнопка */
 .header__btn {
   display: inline-block;
-  background-color: var(--accent-purple);
+  background: var(--accent-purple);
   color: var(--text-main);
   text-decoration: none;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 12px 20px;
+  font-size: 16px;
   font-weight: 600;
   box-shadow: 0 0 20px rgba(112, 38, 255, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   border-radius: 30px;
 }
 
 .header__btn:hover,
 .header__link:hover {
-  background-color: #8242ff;
-  box-shadow: 0 0 25px rgba(112, 38, 255, 0.5);
+  background: var(--accent-purple);
+  box-shadow: 0 0 25px rgba(112, 38, 255, 0.6);
   transform: translateY(-1px);
+}
+/* header - finished */
+
+.hero {
+  position: relative;
+  padding: 120px 0 0;
+  margin-bottom: 64px;
+  /* 
+     Воссоздаем градиент из Фигмы: 
+     сверху полностью прозрачный черный rgba(0,0,0,0), 
+     к низу переходит в плотный черный rgba(0,0,0,1)
+  */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.93) 84%,
+    rgba(0, 0, 0, 0.95) 88%,
+    rgba(0, 0, 0, 0.97) 93%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background-image: url("../images/hero-neon.png");
+  background-repeat: no-repeat;
+  background-position: 370px -55px;
+  background-size: contain;
+}
+
+/* Флекс-контейнер для текста и будущих персонажей */
+.hero__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+/* Левая колонка с контентом */
+.hero__content {
+  flex: 0 1 540px;
+}
+
+/* Маленькая плашка-badge над заголовком */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0b071e;
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(144, 138, 159, 0.3),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.3);
+  padding: 6px 16px 6px 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+}
+
+/* 2. ВНУТРЕННЯЯ ЛЕВАЯ КАПСУЛА (С БЕЛЫМ БОРДЕРОМ) */
+.hero__badge-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+  padding: 2px 8px;
+  border-radius: 100px;
+  margin-right: 12px;
+}
+
+/* 3. ВНЕШНИЙ СЕРЫЙ КРУЖОК РАДИОКНОПКИ */
+.hero__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 4. БЕЛАЯ ТОЧКА ПО ЦЕНТРУ РАДИОКНОПКИ */
+.hero__badge-dot::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.15),
+    0 0 10px rgba(0, 236, 255, 0.5);
+}
+
+.hero__badge-text {
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero__badge-text b {
+  margin-left: 5px;
+}
+
+.hero__title {
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 64px;
+  margin-bottom: 20px;
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.hero__action-btn {
+  display: inline-block;
+  background: var(--accent-purple);
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(112, 38, 255, 0.3);
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero__action-btn:hover {
+  box-shadow: 0 0 30px rgba(98, 54, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.hero__btn-arrow {
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero__action-btn:hover .hero__btn-arrow {
+  transform: translateX(4px) scale(1.2);
+  color: var(--accent-cyan);
+}
+
+.hero__media {
+  flex: 0 1 510px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero__img {
+  position: relative;
+  top: 85px;
+  left: 50px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero__grid {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.hero-card {
+  flex: 1 1 50%;
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  padding: 33px 24px;
+  min-height: 216px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  /* 
+     МАГИЯ ГЛЯНЦЕВОГО ОБЪЕМА КАРТОЧЕК:
+     1. 0 0 0 1px ... — задает тонкую аккуратную внешнюю рамку в тон дизайна.
+     2. inset 1px 1px 1px ... — та самая белая микро-подсветка, которая ложится строго на ВЕРХНИЙ и ЛЕВЫЙ край карточки, создавая эффект дорогого глянцевого стекла!
+  */
+  box-shadow:
+    0 0 0 1px rgba(144, 138, 159, 0.3),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-card:nth-child(1),
+.hero-card:nth-child(2) {
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+/* 1. ПЕРВАЯ КАРТОЧКА С ФОНОМ */
+.hero-card:nth-child(1) {
+  background:
+    linear-gradient(
+      to right,
+      rgba(17, 14, 24, 0.5) 40%,
+      rgba(17, 14, 24, 0.1) 100%
+    ),
+    url("../images/card-bg-1.png");
+  background-size: cover;
+}
+
+.hero-card:nth-child(1):hover {
+  background:
+    linear-gradient(
+      to right,
+      rgba(17, 14, 24, 0.09) 40%,
+      rgba(17, 14, 24, 0) 100%
+    ),
+    url("../images/card-bg-1.png");
+  background-size: cover;
+}
+
+/* 2. ВТОРАЯ КАРТОЧКА С ФОНОМ */
+.hero-card:nth-child(2) {
+  background:
+    linear-gradient(
+      to right,
+      rgba(17, 14, 24, 0.5) 40%,
+      rgba(17, 14, 24, 0.1) 100%
+    ),
+    url("../images/card-bg-2.png");
+  background-size: cover;
+}
+
+.hero-card:nth-child(2):hover {
+  background:
+    linear-gradient(
+      to right,
+      rgba(17, 14, 24, 0.09) 10%,
+      rgba(17, 14, 24, 0) 100%
+    ),
+    url("../images/card-bg-2.png");
+  background-size: cover;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(144, 138, 159, 0.4),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.6),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.hero-card__content {
+  position: relative;
+  z-index: 2;
+  max-width: 280px;
+}
+
+.hero-card__title {
+  font-family: Clash Display;
+  font-size: 29px;
+  line-height: 39px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.hero-card__text {
+  font-family: Clash Display;
+  font-size: 23px;
+  line-height: 24px;
+  font-weight: 500;
 }
