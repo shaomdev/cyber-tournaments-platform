@@ -516,6 +516,10 @@ body {
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 96px;
+  background-image: url(../images/power-background.svg);
+  background-size: cover;
+  background-position: 0 -205px;
+  background-repeat: no-repeat;
 }
 
 .bento__top {
