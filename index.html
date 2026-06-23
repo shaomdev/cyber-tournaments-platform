@@ -377,6 +377,226 @@
           </div>
         </div>
       </section>
+
+      <section class="champions">
+        <div class="container">
+          <div class="champions__header">
+            <h2 class="champions__title">Champions of the Arena</h2>
+            <p class="champions__subtitle">
+              Meet the elite players dominating the game
+            </p>
+          </div>
+
+          <!-- Обёртка для таблицы-лидерборда -->
+          <div
+            class="leaderboard"
+            role="table"
+            aria-label="Champions of the Arena"
+          >
+            <!-- Шапка таблицы -->
+            <div class="leaderboard__header" role="row">
+              <div class="col-rank" role="columnheader">
+                Rank <img src="images/champions-sort-icon.svg" alt="sort" />
+              </div>
+              <div class="col-name" role="columnheader">Leaders name</div>
+              <div class="col-stat" role="columnheader">
+                Win Rate
+                <img src="images/champions-sort-icon.svg" alt="sort" />
+              </div>
+              <div class="col-stat" role="columnheader">
+                Tournament Wins
+                <img src="images/champions-icon-down.svg" alt="sort" />
+              </div>
+              <div class="col-stat" role="columnheader">
+                Top 3 Finishes
+                <img src="images/champions-sort-icon.svg" alt="sort" />
+              </div>
+              <div class="col-stat" role="columnheader">
+                Top 8 Finishes
+                <img src="images/champions-sort-icon.svg" alt="sort" />
+              </div>
+            </div>
+
+            <!-- Тело таблицы со строками -->
+            <div class="leaderboard__body">
+              <!-- Строка 1 (Топ-1) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">
+                  <img
+                    src="images/champions-phantom-badge.svg"
+                    alt="Rank 1 Badge"
+                  />
+                </div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-phantom-avatar.svg"
+                    alt="PhantomBlade avatar"
+                  />
+                  <span>PhantomBlade</span>
+                </div>
+                <div class="col-stat" role="cell">89%</div>
+                <div class="col-stat" role="cell">11</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">0</div>
+              </div>
+
+              <!-- Строка 2 (Топ-2) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">
+                  <img
+                    src="images/champions-raven-badge.svg"
+                    alt="Rank 2 Badge"
+                  />
+                </div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-raven-avatar.svg"
+                    alt="RavenYeager avatar"
+                  />
+                  <span>RavenYeager</span>
+                </div>
+                <div class="col-stat" role="cell">88%</div>
+                <div class="col-stat" role="cell">2</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">4</div>
+              </div>
+
+              <!-- Строка 3 (Топ-3) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">
+                  <img
+                    src="images/champions-paws-badge.svg"
+                    alt="Rank 3 Badge"
+                  />
+                </div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-raven-avatar.svg"
+                    alt="PawsMaster avatar"
+                  />
+                  <span>PawsMaster</span>
+                </div>
+                <div class="col-stat" role="cell">87%</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">1</div>
+              </div>
+
+              <!-- Строка 4 (Топ-4) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">4</div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-finger-avatar.svg"
+                    alt="FingerWarrior avatar"
+                  />
+                  <span>FingerWarrior</span>
+                </div>
+                <div class="col-stat" role="cell">83%</div>
+                <div class="col-stat" role="cell">9</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">6</div>
+              </div>
+
+              <!-- Строка 5 (Топ-5) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">5</div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-iron-avatar.svg"
+                    alt="IronHead avatar"
+                  />
+                  <span>IronHead</span>
+                </div>
+                <div class="col-stat" role="cell">80%</div>
+                <div class="col-stat" role="cell">1</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">8</div>
+              </div>
+
+              <!-- Строка 6 (Топ-6) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">6</div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-quantum-avatar.svg"
+                    alt="QuantumKaizen avatar"
+                  />
+                  <span>QuantumKaizen</span>
+                </div>
+                <div class="col-stat" role="cell">80%</div>
+                <div class="col-stat" role="cell">1</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">8</div>
+              </div>
+
+              <!-- Строка 7 (Топ-7) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">7</div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-echo-avatar.svg"
+                    alt="EchoPulse avatar"
+                  />
+                  <span>EchoPulse</span>
+                </div>
+                <div class="col-stat" role="cell">75%</div>
+                <div class="col-stat" role="cell">0</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">0</div>
+              </div>
+
+              <!-- Строка 8 (Топ-8) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">8</div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-blitz-avatar.svg"
+                    alt="Blitz avatar"
+                  />
+                  <span>Blitz</span>
+                </div>
+                <div class="col-stat" role="cell">72%</div>
+                <div class="col-stat" role="cell">1</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">9</div>
+              </div>
+
+              <!-- Строка 9 (Топ-9) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">9</div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-echo-avatar.svg"
+                    alt="SilverEdge avatar"
+                  />
+                  <span>SilverEdge</span>
+                </div>
+                <div class="col-stat" role="cell">71%</div>
+                <div class="col-stat" role="cell">3</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">12</div>
+              </div>
+
+              <!-- Строка 10 (Топ-10) -->
+              <div class="leaderboard__row" role="row">
+                <div class="col-rank" role="cell">10</div>
+                <div class="col-name" role="cell">
+                  <img
+                    src="images/champions-echo-avatar.svg"
+                    alt="Notyourbae avatar"
+                  />
+                  <span>Notyourbae</span>
+                </div>
+                <div class="col-stat" role="cell">70%</div>
+                <div class="col-stat" role="cell">5</div>
+                <div class="col-stat" role="cell">7</div>
+                <div class="col-stat" role="cell">6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

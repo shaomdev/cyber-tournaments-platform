@@ -482,7 +482,8 @@ body {
 }
 
 .power__title,
-.featured__title {
+.featured__title,
+.champions__title {
   font-size: 36px;
   font-weight: 800;
   color: var(--text-main);
@@ -490,7 +491,8 @@ body {
 }
 
 .power__subtitle,
-.featured__subtitle {
+.featured__subtitle,
+.champions__subtitle {
   font-size: 16px;
   color: #d0d5dd;
 }
@@ -871,3 +873,136 @@ body {
   font-weight: 400;
 }
 /* featured - finished */
+
+.champions {
+  height: auto;
+  background-image: url(../images/champions-arena-background.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 96px;
+}
+
+.champions__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 64px;
+}
+
+.champions__title {
+  font-size: 45px;
+  letter-spacing: 1.5px;
+}
+
+.champions__subtitle {
+  color: var(--text-secondary);
+}
+
+.leaderboard {
+  margin-bottom: 96px;
+}
+
+/* СТИЛИЗАЦИЯ ШАПКИ ТАБЛИЦЫ */
+.leaderboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 70px;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(144, 138, 159, 0.3),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.7);
+  background-color: rgba(26, 22, 35, 0.4);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.leaderboard__header .col-rank,
+.leaderboard__header .col-stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.leaderboard__header .col-rank:first-child {
+  justify-content: flex-start;
+}
+
+/* СТИЛИЗАЦИЯ СТРОК С ИГРОКАМИ (Каждая строка — плашка) */
+.leaderboard__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  background-color: rgba(26, 22, 35, 0.4);
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(144, 138, 159, 0.3),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 16px 0px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease-in-out;
+}
+
+.leaderboard__row:hover {
+  background-color: rgba(26, 22, 35, 0.6);
+  box-shadow:
+    0 0 0 1px rgba(144, 138, 159, 0.5),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.leaderboard__row img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* ЖЕСТКОЕ ВЫРАВНИВАНИЕ КОЛОНОК */
+.col-rank {
+  display: flex;
+  flex: 0 100px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.col-name {
+  display: flex;
+  flex: 2 1 200px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 45px;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.leaderboard__header .col-name {
+  justify-content: flex-start;
+  padding-left: 24px;
+}
+
+.leaderboard__body .col-name img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.col-stat {
+  display: flex;
+  flex: 1 0 190px;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+}
+/* champions - finished */
