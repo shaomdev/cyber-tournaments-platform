@@ -1022,6 +1022,10 @@ body {
 
 .headline {
   margin-bottom: 96px;
+  background-image: url(../images/headline-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40px -15px;
 }
 
 .headline__grid {
@@ -1061,6 +1065,10 @@ body {
   margin-bottom: 8px;
   padding-right: 24px;
   text-decoration: none;
+}
+
+.headline-card__title-link:hover {
+  color: var(--accent-cyan);
 }
 
 .headline-card__text {
