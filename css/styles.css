@@ -77,26 +77,82 @@ body {
   list-style: none;
 }
 
-.nav__link,
-.header__link {
+.btn {
+  display: inline-block;
+  background: var(--bg-main);
   color: var(--text-main);
   text-decoration: none;
+  padding: 12px 20px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(112, 38, 255, 0.3);
+  border-radius: 30px;
+}
+
+.btn span {
+  margin-left: 8px;
+}
+
+.btn--small {
   letter-spacing: -0.01em;
   padding: 8px 12px;
-  border-radius: 30px;
-  box-shadow: 0 0 20px rgba(112, 38, 255, 0.3);
   transition: all 0.3s ease-in-out;
 }
 
-.header__link {
-  padding: 12px 20px;
+.btn--signin,
+.btn--signup {
+  transition: all 0.3s ease-in-out;
 }
 
-.nav__link:hover {
+.btn--signup {
   background: var(--accent-purple);
+}
+
+.btn--small:hover,
+.btn--signin:hover,
+.btn--signup:hover {
+  background: var(--accent-purple);
+  box-shadow: 0 0 25px rgba(112, 38, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn--secondary {
   color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn--secondary:hover {
+  opacity: 0.8;
+}
+
+.btn--purple {
+  background: var(--accent-purple);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn--white {
+  background-color: var(--text-main);
+  color: var(--bg-main);
+  margin-left: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn--purple:hover,
+.btn--white:hover {
+  box-shadow: 0 0 30px rgba(98, 54, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn--purple:hover .btn-arrow,
+.btn--white:hover .btn-arrow {
+  transform: translateX(4px) scale(1.2);
+  color: var(--accent-cyan);
 }
 
 /* Блок кнопок справа */
@@ -104,26 +160,6 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
-}
-
-.header__btn {
-  display: inline-block;
-  background: var(--accent-purple);
-  color: var(--text-main);
-  text-decoration: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(112, 38, 255, 0.3);
-  transition: all 0.3s ease-in-out;
-  border-radius: 30px;
-}
-
-.header__btn:hover,
-.header__link:hover {
-  background: var(--accent-purple);
-  box-shadow: 0 0 25px rgba(112, 38, 255, 0.6);
-  transform: translateY(-1px);
 }
 /* header - finished */
 
@@ -225,7 +261,7 @@ body {
   font-weight: 600;
 }
 
-.hero__badge-text b {
+.hero__badge-text span {
   margin-left: 5px;
 }
 
@@ -244,38 +280,6 @@ body {
   font-weight: 400;
   margin-bottom: 40px;
   max-width: 480px;
-}
-
-.hero__action-btn,
-.bento__action-btn {
-  display: inline-block;
-  background: var(--accent-purple);
-  color: var(--text-main);
-  text-decoration: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(112, 38, 255, 0.3);
-  border-radius: 30px;
-  transition: all 0.3s ease-in-out;
-}
-
-.hero__action-btn:hover,
-.bento__action-btn:hover {
-  box-shadow: 0 0 30px rgba(98, 54, 255, 0.6);
-  transform: translateY(-2px);
-}
-
-.hero__btn-arrow,
-.bento__btn-arrow {
-  display: inline-block;
-  transition: all 0.3s ease-in-out;
-}
-
-.hero__action-btn:hover .hero__btn-arrow,
-.bento__action-btn:hover .bento__btn-arrow {
-  transform: translateX(4px) scale(1.2);
-  color: var(--accent-cyan);
 }
 
 .hero__media {
@@ -502,34 +506,9 @@ body {
 .power__subtitle,
 .featured__subtitle,
 .champions__subtitle,
-.headline__subtitle {
+.headline__text {
   font-size: 16px;
   color: #d0d5dd;
-}
-
-.power__btn,
-.featured__btn,
-.headline__btn {
-  color: var(--text-main);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.power__btn:hover,
-.featured__btn:hover,
-.headline__btn:hover {
-  opacity: 0.8;
-}
-
-.power__btn span,
-.featured__btn span,
-.headline__btn span {
-  margin-left: 8px;
 }
 
 /* СЕТКА BENTO */
@@ -658,7 +637,7 @@ body {
 .bento-arena,
 .bento-tracker,
 .bento-card--rewards {
-  /* Твой фирменный глянцевый блик и обводка на каждую отдельную коробку! */
+  /* глянцевый блик и обводка на каждую отдельную коробку! */
   box-shadow:
     0 0 0 1px rgba(144, 138, 159, 0.3),
     inset 1px 1px 1px rgba(255, 255, 255, 0.7);
@@ -1094,3 +1073,56 @@ body {
   transform: translate(3px, -3px);
 }
 /*headline - finished */
+
+.glory {
+  margin-bottom: 96px;
+}
+
+.glory__banner {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(17, 14, 24, 0.5) 40%,
+      rgba(17, 14, 24, 0.1) 100%
+    ),
+    url(../images/glory-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 64px;
+  border-radius: 16px;
+  min-height: 360px;
+  overflow: hidden;
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(144, 138, 159, 0.3),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.glory__banner:hover {
+  transform: translate3d(0, -3px, 0);
+}
+
+.glory__content {
+  max-width: 620px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.glory__title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.glory__text {
+  font-size: 16px;
+  color: #d0d5dd;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+/* glory - finished */
