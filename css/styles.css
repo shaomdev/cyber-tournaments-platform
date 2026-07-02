@@ -18,6 +18,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth; /* плавный скролл по всей странице */
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
